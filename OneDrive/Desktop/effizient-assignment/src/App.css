@@ -1,4 +1,4 @@
-/* Reset default margins and padding */
+
 * {
   margin: 0;
   padding: 0;
@@ -100,7 +100,6 @@ input[type="checkbox"] {
 }
 
 
-/* Add this to your App.css file */
 .header-box {
   background-color: #007bff;
   color: #fff;
