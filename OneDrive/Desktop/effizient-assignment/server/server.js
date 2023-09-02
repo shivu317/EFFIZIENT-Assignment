@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Configure nodemailer to send emails
+
 const transporter = nodemailer.createTransport({
   service: 'your-email-service', // e.g., 'gmail'
   auth: {
@@ -22,7 +22,6 @@ app.post('/submit-form', async (req, res) => {
   try {
     const formData = req.body;
 
-    // Generate the Statement of Purpose (SOP)
     const sopText = `
       Dear ${formData.fullName},
       
@@ -51,8 +50,7 @@ app.post('/submit-form', async (req, res) => {
     // Send the email
     await transporter.sendMail(mailOptions);
 
-    // You can store the form data in a database here if needed
-    // Example: database.save(formData);
+    
 
     res.status(200).json({ success: true, message: 'Email sent successfully' });
   } catch (error) {
